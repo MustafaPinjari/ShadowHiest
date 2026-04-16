@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Operation Shadow Heist</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #000;
+    }
+
+    #renderCanvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+      touch-action: none;
+    }
+
+    #webgl-error {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: #0a0a0a;
+      color: #e0e0e0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    #webgl-error h1 {
+      font-size: 2rem;
+      color: #ff4444;
+      margin-bottom: 1rem;
+    }
+
+    #webgl-error p {
+      font-size: 1.1rem;
+      max-width: 520px;
+      line-height: 1.6;
+      color: #aaa;
+    }
+
+    #webgl-error a {
+      color: #66aaff;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="renderCanvas"></canvas>
+
+  <div id="webgl-error">
+    <h1>WebGL Not Supported</h1>
+    <p>
+      Operation Shadow Heist requires WebGL to run. Your browser or device does not appear to support it.
+      Please try a modern browser such as <a href="https://www.google.com/chrome/" target="_blank">Chrome</a>,
+      <a href="https://www.mozilla.org/firefox/" target="_blank">Firefox</a>, or
+      <a href="https://www.microsoft.com/edge" target="_blank">Edge</a>, and ensure hardware acceleration is enabled.
+    </p>
+  </div>
+
+  <!-- Babylon.js 6.x CDN (pinned) -->
+  <script src="https://cdn.babylonjs.com/babylon.js"></script>
+  <script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
+  <!-- Cannon.js physics (required by CannonJSPlugin) -->
+  <script src="https://cdn.babylonjs.com/cannon.js"></script>
+
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>
